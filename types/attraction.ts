@@ -1,3 +1,5 @@
+
+// Interface for representing a Disney attraction
 export interface Attraction {
   id: number;
   name: string;
@@ -8,4 +10,5 @@ export interface Attraction {
   heightRequirement?: number;
   description: string;
   status: "Open" | "Closed" | "Closed for Refurbishment" | "Down";
+  image?: string; // Optional property for the image URL of the attraction  
 };

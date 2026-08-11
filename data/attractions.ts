@@ -1,6 +1,6 @@
 import { Attraction } from "@/types/attraction";
 
-
+// Sample data for Disney attractions
 export const attractions: Attraction[] = [
   {
     id: 1,
@@ -10,7 +10,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "New Orleans Square",
     description: "A swashbuckling adventure through the Caribbean.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/pirates.png"
   },
   {
     id: 2,
@@ -32,7 +33,8 @@ export const attractions: Attraction[] = [
     land: "Tomorrowland",
     heightRequirement: 40,
     description: "A high-speed indoor roller coaster through outer space.",
-    status: "Down"
+    status: "Down",
+    image: "./images/attractions/Space_Mountain,_Disneyland.jpg"
   },
   {
     id: 4,
@@ -42,7 +44,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "New Orleans Square",
     description: "A spooky tour through a haunted estate.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/The_Haunted_Mansion.png"
   },
   {
     id: 5,
@@ -204,7 +207,7 @@ export const attractions: Attraction[] = [
   },
   {
     id: 20,
-    name: "The Little Mermaid ~ Ariel's Undersea Adventure",
+    name: "The Little Mermaid - Ariel's Undersea Adventure",
     waitTime: 20,
     park: "Disney's California Adventure", 
     rideType: "Dark Ride",
