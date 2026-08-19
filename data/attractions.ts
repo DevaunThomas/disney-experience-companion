@@ -22,7 +22,8 @@ export const attractions: Attraction[] = [
     land: "Grizzly Peak",
     heightRequirement: 40,
     description: "A flight simulation ride that takes you on a journey around the world.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/soarin.png"
   },
   {
     id: 3,
@@ -56,7 +57,8 @@ export const attractions: Attraction[] = [
     land: "New Orleans Square",
     heightRequirement: 40,
     description: "A magical journey through the world of Princess Tiana.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/tianasbayouadventure.png"
   },
   {
     id: 6,
@@ -66,7 +68,8 @@ export const attractions: Attraction[] = [
     rideType: "Family Ride",
     land: "Critter Country",
     description: "A whimsical journey through the Hundred Acre Wood.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/winniethepooh.png"
   },
   {
     id: 7,
@@ -77,7 +80,8 @@ export const attractions: Attraction[] = [
     land: "Adventureland",
     heightRequirement: 46,
     description: "An exciting adventure through the jungles and temples of the Indiana Jones universe.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/indianajones.png"
   },
   {
     id: 8,
@@ -87,7 +91,8 @@ export const attractions: Attraction[] = [
     rideType: "Family Ride",
     land: "Adventureland",
     description: "A humorous boat tour through exotic rivers and jungles.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/junglecruise.png"
   },
   {
     id: 9,
@@ -98,7 +103,8 @@ export const attractions: Attraction[] = [
     land: "Frontierland",
     heightRequirement: 40,
     description: "A high-speed roller coaster through a haunted gold mine.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/thundermountain.png"
   },
   {
     id: 10,
@@ -108,7 +114,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "Fantasyland",
     description: "A magical journey through the world of Peter Pan.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/peterpansflight.png"
   },
   {
     id: 11,
@@ -118,7 +125,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "Mickey's Toontown",
     description: "A whimsical adventure through the world of Mickey and Minnie Mouse.",
-    status: "Closed for Refurbishment"
+    status: "Closed for Refurbishment",
+    image: "./images/attractions/runawayrailway.png"
   },
   {
     id: 12,
@@ -129,7 +137,8 @@ export const attractions: Attraction[] = [
     land: "Cars Land",
     heightRequirement: 40,
     description: "A thrilling race through the town of Radiator Springs.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/radiatorspringsracers.png"
   },
   {
     id: 13,
@@ -140,7 +149,8 @@ export const attractions: Attraction[] = [
     land: "Avengers Campus",
     heightRequirement: 40,
     description: "An exciting mission to break out of the prison of the Guardians of the Galaxy.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/guardians.png"
   },
   {
     id: 14,
@@ -151,7 +161,8 @@ export const attractions: Attraction[] = [
     land: "Pixar Pier",
     heightRequirement: 48,
     description: "A high-speed roller coaster through the world of The Incredibles.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/incredicoaster.png"
   },
   {
     id: 15,
@@ -161,7 +172,8 @@ export const attractions: Attraction[] = [
     rideType: "Family Ride",
     land: "Pixar Pier",
     description: "A 4D interactive shooting game through the world of Toy Story.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/toystorymidwaymania.png"
   },
   {
     id: 16,
@@ -172,7 +184,8 @@ export const attractions: Attraction[] = [
     land: "Grizzly Peak",
     heightRequirement: 42,
     description: "A thrilling raft ride through the jungles of Grizzly Peak.",
-    status: "Closed"
+    status: "Closed",
+    image: "./images/attractions/grizzlyriverrun.png"
   },
   {
     id: 17,
@@ -183,7 +196,8 @@ export const attractions: Attraction[] = [
     land: "Cars Land",
     heightRequirement: 32,
     description: "A fun-filled ride through Mater's junkyard.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/matersjunkyardjamboree.png"
   },
   {
     id: 18,
@@ -193,7 +207,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "Hollywood Land",
     description: "A thrilling adventure through the world of Monsters, Inc.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/monstersinc.png"
   },
   {
     id: 19,
@@ -203,7 +218,8 @@ export const attractions: Attraction[] = [
     rideType: "Family Ride",
     land: "Pixar Pier",
     description: "A Ferris wheel with swinging and non-swinging gondolas.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/pixarpalaround.png"
   },
   {
     id: 20,
@@ -213,7 +229,8 @@ export const attractions: Attraction[] = [
     rideType: "Dark Ride",
     land: "Paradise Gardens Park",
     description: "A magical journey through the world of The Little Mermaid.",
-    status: "Open"
+    status: "Open",
+    image: "./images/attractions/arielsunderseaadventure.png"
   }
 
 ];
