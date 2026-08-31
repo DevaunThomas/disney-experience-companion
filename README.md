@@ -126,3 +126,23 @@ Open **http://localhost:3000** in your browser.
 ## Disclaimer
 
 This project is an independent educational portfolio project and is **not affiliated with, endorsed by, or sponsored by The Walt Disney Company**. All trademarks, attraction names, and park names are the property of their respective owners and are used for educational and demonstration purposes only.
+
+## Account provider setup
+
+The app uses Auth.js for Google and Apple authentication. Copy `.env.example` to `.env.local`, generate `AUTH_SECRET` with `npx auth secret`, and add credentials from the Google and Apple developer consoles.
+
+Register these provider callback URLs (replace the host in production):
+
+- Google: `http://localhost:3000/api/auth/callback/google`
+- Apple: `https://your-domain.com/api/auth/callback/apple`
+
+Apple requires an HTTPS return URL and a generated client-secret JWT. Restart the development server after changing environment variables.
+
+### Local credential accounts
+
+During local development, users can also register with a username, email address, and password. Passwords are salted and hashed, and local accounts are stored in the git-ignored `data/users.json` file. The sign-in page includes this development-only test account:
+
+- Email: `test@disneycompanion.local`
+- Password: `Disney123!`
+
+Replace the local JSON store with a production database and add rate limiting, email verification, and password recovery before deploying credential authentication publicly.
