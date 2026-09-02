@@ -8,25 +8,29 @@ const experienceCategories = [
     title: "Attractions",
     description: "Rides, coasters, and immersive adventures across both parks.",
     href: "/attractions",
-    accent: "from-blue-600 to-cyan-500",
+    image:
+      "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/parks-and-tickets/attractions/disneyland/astro-orbitor/astro-orbitor-00.jpg?1763620850989",
   },
   {
     title: "Restaurants",
     description: "Dining spots for quick bites, character meals, and table service.",
     href: "/restaurants",
-    accent: "from-amber-500 to-orange-500",
+    image:
+      "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/wdpro-assets/dlr/things-to-do/dining/disneyland/bengal-barbecue/bengal-barbecue-00.jpg?1777472730537",
   },
   {
     title: "Parades",
     description: "Seasonal entertainment and character-filled performances to plan around.",
     href: "/parades",
-    accent: "from-purple-600 to-pink-500",
+    image:
+      "https://r2-media.wdwnt.com/2022/09/magic-happens-parade-debut-dl_9-1155x770-1.jpg",
   },
   {
     title: "Fireworks",
     description: "Nighttime shows, fireworks, and evenings worth reserving a view for.",
     href: "/fireworks",
-    accent: "from-red-500 to-pink-600",
+    image:
+      "https://cdn1.parksmedia.wdprapps.disney.com/resize/mwImage/1/1600/900/75/dam/disneyland/entertainment/disneyland/believe-in-holiday-magic-fireworks/holiday-magic-fireworks-16x9.jpg?1784909241131",
   },
 ];
 
@@ -61,7 +65,7 @@ export default async function Home() {
         <p className="text-sm font-semibold uppercase tracking-[0.14em] text-blue-100">Plan your day</p>
         <h2 className="mt-3 text-4xl font-bold">Build a park day around the experiences you care about.</h2>
         <p className="mt-4 max-w-2xl text-base text-blue-50">
-          Browse attractions, restaurants, parades, and fireworks in one place to shape your ideal Disneyland Resort plan.
+          Browse attractions, restaurants, parades, and fireworks in one place to shape your magical Disneyland Resort day.
         </p>
       </section>
 
@@ -72,10 +76,22 @@ export default async function Home() {
             href={category.href}
             className="group block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-transform duration-150 hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className={`h-28 bg-gradient-to-r ${category.accent}`} />
+            <div
+              className="relative h-36 overflow-hidden bg-slate-200"
+              style={{
+                backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.3), rgba(15, 23, 42, 0.5)), url(${category.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            >
+              <div className="absolute inset-0 flex items-end p-4">
+                <span className="rounded-full border border-white/40 bg-white/15 px-3 py-1 text-sm font-semibold text-white backdrop-blur-sm">
+                  {category.title}
+                </span>
+              </div>
+            </div>
             <div className="p-5">
-              <h3 className="text-xl font-bold text-slate-900">{category.title}</h3>
-              <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
+              <p className="text-sm leading-6 text-slate-600">{category.description}</p>
               <span className="mt-4 inline-flex items-center text-sm font-semibold text-blue-700">
                 Open {category.title}
                 <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-1">
