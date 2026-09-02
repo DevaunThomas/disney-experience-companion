@@ -18,8 +18,8 @@ export default function AuthPage({ mode }: { mode: "signin" | "signup" }) {
         <h1 className="mt-2 text-3xl font-bold">{isSignup ? "Create your account" : "Welcome back"}</h1>
         <p className="mb-7 mt-2 text-sm leading-6 text-slate-600">
           {isSignup
-            ? "Choose your own username, email, and password, or use Google or Apple."
-            : "Sign in to view your profile, preferences, and favorite attractions."}
+            ? "Create an account to save your itinerary, favorite attractions, and plan the perfect Disney day."
+            : "Sign in to save your itinerary, view your favorites, and keep your park strategy ready for the next visit."}
         </p>
         <CredentialsAuthForm mode={mode} />
         {!isSignup && process.env.NODE_ENV !== "production" && <TestAccountButton />}
