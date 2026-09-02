@@ -1,4 +1,4 @@
-# 🎢 Disney Experience Companion
+#  Disney Experience Companion
 
 **Disney Experience Companion** is a modern web application built with **Next.js, React, and TypeScript** that helps guests plan visits to **Disneyland Resort**.
 
@@ -10,7 +10,7 @@ The project is designed as both a functional trip-planning application and a dem
 
 ---
 
-## ✨ Features
+##  Features
 
 - Browse attractions across both Disneyland Resort parks
 - Search attractions by name
@@ -25,7 +25,7 @@ The project is designed as both a functional trip-planning application and a dem
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Frontend
 
@@ -55,7 +55,7 @@ The project is designed as both a functional trip-planning application and a dem
 
 ---
 
-## 📸 Application Preview
+##  Application Preview
 
 ### Home
 
@@ -77,7 +77,7 @@ The attraction browser allows users to explore and filter rides from Disneyland 
 
 ---
 
-## 🎯 Engineering Focus
+##  Engineering Focus
 
 The project is designed around modern frontend software engineering practices with an emphasis on:
 
@@ -94,7 +94,7 @@ The project is designed around modern frontend software engineering practices wi
 
 ---
 
-## 🏗️ Project Architecture
+##  Project Architecture
 
 The application uses a feature-oriented structure to keep domain-specific functionality separated while allowing common components, hooks, utilities, and types to be reused throughout the application.
 
@@ -130,7 +130,7 @@ This structure is intended to make the application easier to maintain and extend
 
 ---
 
-## 💡 Key Engineering Decisions
+##  Key Engineering Decisions
 
 ### Type-Safe Domain Models
 
@@ -192,7 +192,7 @@ A production implementation would move credential data to persistent database st
 
 ---
 
-## 🔐 Authentication
+##  Authentication
 
 Authentication is implemented using **Auth.js**.
 
@@ -221,7 +221,7 @@ Before credential authentication is used in production, additional protections s
 
 ---
 
-## ⚙️ Account Provider Setup
+##  Account Provider Setup
 
 The application uses Auth.js for Google and Apple authentication.
 
@@ -259,7 +259,7 @@ Restart the development server after changing authentication environment variabl
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 The project uses:
 
@@ -272,7 +272,7 @@ The testing strategy will continue to expand as additional application functiona
 
 ---
 
-## 🚧 Development Progress
+##  Development Progress
 
 - [x] Attraction browser
 - [x] Search and filtering
@@ -290,7 +290,7 @@ The testing strategy will continue to expand as additional application functiona
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -337,7 +337,7 @@ http://localhost:3000
 
 ---
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 Potential future improvements include:
 
@@ -353,7 +353,7 @@ Potential future improvements include:
 
 ---
 
-## 📚 What I'm Learning
+##  What I'm Learning
 
 This project continues to provide hands-on experience with:
 
@@ -373,7 +373,7 @@ The project is being developed iteratively, with features added and refactored a
 
 ---
 
-## 📄 Disclaimer
+##  Disclaimer
 
 This project is an independent educational and portfolio project and is **not affiliated with, endorsed by, or sponsored by The Walt Disney Company**.
 
