@@ -5,8 +5,11 @@ A modern web application built with **Next.js**, **React**, and **TypeScript** t
 > **Status:** 🚧 Currently in development
 
 ---
-
+## Home Landing Page
 <img width="1290" height="571" alt="image" src="https://github.com/user-attachments/assets/f6b82bea-9aa9-45a7-a883-f595d90f3643" />
+## Itinerary Page 
+<img width="1164" height="561" alt="image" src="https://github.com/user-attachments/assets/ce23faba-330b-4e95-87f7-8ad00acc2ba2" />
+
 
 
 ## Features
