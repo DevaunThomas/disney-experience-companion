@@ -6,6 +6,9 @@ A modern web application built with **Next.js**, **React**, and **TypeScript** t
 
 ---
 
+<img width="1290" height="571" alt="image" src="https://github.com/user-attachments/assets/f6b82bea-9aa9-45a7-a883-f595d90f3643" />
+
+
 ## Features
 
 *  Browse attractions from both Disneyland Resort parks
