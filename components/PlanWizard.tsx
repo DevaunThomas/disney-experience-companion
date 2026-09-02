@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { useSession } from "next-auth/react";
-import { readItinerary } from "@/util/itinerary";
+import { generateDefaultPlanName, readItinerary, saveItinerary } from "@/util/itinerary";
 
 type CategoryKey = "attractions" | "restaurants" | "parades" | "fireworks";
 
@@ -53,11 +53,15 @@ export default function PlanWizard() {
     window.location.assign(categoryRoutes[selectedCategory]);
   };
 
-  const saveItinerary = () => {
+  const savePlan = () => {
     if (!session?.user?.email) return;
 
     try {
-      window.localStorage.setItem(storageKey, JSON.stringify(itinerary));
+      saveItinerary(itinerary, session.user.email, {
+        planName: generateDefaultPlanName(session.user.email),
+        date: new Date().toISOString().slice(0, 10),
+        notes: "",
+      });
       setSaveMessage("Your itinerary has been saved and is ready to view.");
       window.location.assign("/itinerary");
     } catch {
@@ -120,7 +124,7 @@ export default function PlanWizard() {
           <button
             type="button"
             disabled={itinerary.length === 0}
-            onClick={saveItinerary}
+            onClick={savePlan}
             className="rounded-lg bg-emerald-600 px-4 py-2.5 font-semibold text-white transition-colors hover:bg-emerald-700 disabled:cursor-not-allowed disabled:bg-slate-300"
           >
             Save itinerary & view it

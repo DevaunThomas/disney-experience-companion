@@ -1,7 +1,7 @@
 
 import { useSession } from "next-auth/react";
-import { useState } from "react";
-import { addExperienceToItinerary } from "@/util/itinerary";
+import { useEffect, useState } from "react";
+import { addExperienceToItinerary, readItinerary, removeExperienceFromItinerary } from "@/util/itinerary";
 import { Attraction } from "@/types/attraction";
 import disneylandImage from "../public/images/attractions/disneylandimage.png";
 
@@ -13,13 +13,21 @@ const AttractionCard: React.FC<AttractionCardProps> = ({ attraction }) => {
     const { data: session } = useSession();
     const [isAdded, setIsAdded] = useState(false);
     const [showToast, setShowToast] = useState(false);
+    const email = session?.user?.email ?? null;
+
+    useEffect(() => {
+        setIsAdded(readItinerary(email).some((entry) => entry.category === "attractions" && entry.id === attraction.id));
+    }, [attraction.id, email]);
 
     const handleAddToItinerary = () => {
-        addExperienceToItinerary("attractions", attraction.id, attraction.name, session?.user?.email ?? null);
-        setIsAdded(true);
+        if (isAdded) {
+            removeExperienceFromItinerary("attractions", attraction.id, email);
+        } else {
+            addExperienceToItinerary("attractions", attraction.id, attraction.name, email);
+        }
+        setIsAdded((current) => !current);
         setShowToast(true);
         window.setTimeout(() => {
-            setIsAdded(false);
             setShowToast(false);
         }, 1500);
     };
@@ -28,8 +36,8 @@ const AttractionCard: React.FC<AttractionCardProps> = ({ attraction }) => {
         <>
             {showToast && (
                 <div className="pointer-events-none fixed inset-x-0 top-5 z-50 flex justify-center">
-                    <div className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-lg">
-                        Added to Itinerary
+                    <div className={`rounded-full px-4 py-2 text-sm font-semibold text-white shadow-lg ${isAdded ? "bg-emerald-600" : "bg-red-600"}`}>
+                        {isAdded ? "Added to Itinerary" : "Removed from Itinerary"}
                     </div>
                 </div>
             )}
@@ -57,11 +65,13 @@ const AttractionCard: React.FC<AttractionCardProps> = ({ attraction }) => {
 
                 <button
                     type="button"
-                    title="Add to itinerary"
+                    title={isAdded ? "Remove from itinerary" : "Add to itinerary"}
                     onClick={handleAddToItinerary}
-                    className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-blue-800"
+                    className={`absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 ${
+                        isAdded ? "bg-red-600 hover:bg-red-700" : "bg-blue-700 hover:bg-blue-800"
+                    }`}
                 >
-                    {isAdded ? "✓" : "+"}
+                    {isAdded ? "-" : "+"}
                 </button>
             </div>
         </>

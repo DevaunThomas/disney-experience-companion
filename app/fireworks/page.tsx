@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSession } from "next-auth/react";
 import ExperiencePage from "@/components/ExperiencePage";
 import { fireworks } from "@/data/fireworks";
-import { addExperienceToItinerary } from "@/util/itinerary";
+import { addExperienceToItinerary, readItinerary, removeExperienceFromItinerary } from "@/util/itinerary";
 
 const filters = [
   { key: "park", label: "Parks", options: [...new Set(fireworks.map((show) => show.park))].filter((value): value is string => typeof value === "string") },
@@ -29,13 +29,29 @@ export default function FireworksPage() {
           const { data: session } = useSession();
           const [isAdded, setIsAdded] = useState(false);
           const [showToast, setShowToast] = useState(false);
+          const email = session?.user?.email ?? null;
+
+          useEffect(() => {
+            setIsAdded(readItinerary(email).some((entry) => entry.category === "fireworks" && entry.id === show.id));
+          }, [email]);
+
+          const toggleItinerary = () => {
+            if (isAdded) {
+              removeExperienceFromItinerary("fireworks", show.id, email);
+            } else {
+              addExperienceToItinerary("fireworks", show.id, show.name, email);
+            }
+            setIsAdded((current) => !current);
+            setShowToast(true);
+            window.setTimeout(() => setShowToast(false), 1500);
+          };
 
           return (
             <>
               {showToast && (
                 <div className="pointer-events-none fixed inset-x-0 top-5 z-50 flex justify-center">
-                  <div className="rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-lg">
-                    Added to Itinerary
+                  <div className={`rounded-full px-4 py-2 text-sm font-semibold text-white shadow-lg ${isAdded ? "bg-emerald-600" : "bg-red-600"}`}>
+                    {isAdded ? "Added to Itinerary" : "Removed from Itinerary"}
                   </div>
                 </div>
               )}
@@ -66,19 +82,11 @@ export default function FireworksPage() {
 
                 <button
                   type="button"
-                  title="Add to itinerary"
-                  onClick={() => {
-                    addExperienceToItinerary("fireworks", show.id, show.name, session?.user?.email ?? null);
-                    setIsAdded(true);
-                    setShowToast(true);
-                    window.setTimeout(() => {
-                      setIsAdded(false);
-                      setShowToast(false);
-                    }, 1500);
-                  }}
-                  className="absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full bg-blue-700 text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 hover:bg-blue-800"
+                  title={isAdded ? "Remove from itinerary" : "Add to itinerary"}
+                  onClick={toggleItinerary}
+                  className={`absolute bottom-3 right-3 flex h-10 w-10 items-center justify-center rounded-full text-xl font-bold text-white shadow-lg transition-transform hover:scale-105 ${isAdded ? "bg-red-600 hover:bg-red-700" : "bg-blue-700 hover:bg-blue-800"}`}
                 >
-                  {isAdded ? "✓" : "+"}
+                  {isAdded ? "-" : "+"}
                 </button>
               </article>
             </>

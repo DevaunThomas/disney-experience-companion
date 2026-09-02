@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import AttractionCard from "@/components/AttractionCard";
 import AccountNav from "@/components/AccountNav";
 import { attractions } from "@/data/attractions";
@@ -158,6 +159,12 @@ export default function AttractionsPage() {
             )}
           </div>
         </section>
+      </div>
+
+      <div className="mt-8 flex justify-center">
+        <Link href="/itinerary" className="rounded-full bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800">
+          View Itinerary
+        </Link>
       </div>
     </main>
   );

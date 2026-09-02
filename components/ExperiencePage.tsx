@@ -285,6 +285,15 @@ export default function ExperiencePage<T extends ExperienceItem>({
           </div>
         </section>
       </div>
+
+      <div className="mt-8 flex justify-center">
+        <Link
+          href="/itinerary"
+          className="rounded-full bg-blue-700 px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-blue-800"
+        >
+          View Itinerary
+        </Link>
+      </div>
     </main>
   );
 }
