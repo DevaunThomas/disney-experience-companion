@@ -8,13 +8,13 @@ A modern web application built with **Next.js**, **React**, and **TypeScript** t
 
 ## Features
 
-* 🎠 Browse attractions from both Disneyland Resort parks
-* 🔍 Search and filter attractions by park, land, and thrill level
-* ⏱️ View simulated attraction wait times and operating status
-* ❤️ Save favorite attractions
-* 🗓️ Build a personalized park itinerary
-* 📱 Responsive design for desktop and mobile
-* 🧪 Unit and component testing
+*  Browse attractions from both Disneyland Resort parks
+*  Search and filter attractions by park, land, and thrill level
+*  View simulated attraction wait times and operating status
+*  Save favorite attractions
+*  Build a personalized park itinerary
+*  Responsive design for desktop and mobile
+*  Unit and component testing
 
 ---
 
