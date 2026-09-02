@@ -7,8 +7,10 @@ A modern web application built with **Next.js**, **React**, and **TypeScript** t
 ---
 ## Home Landing Page
 <img width="1290" height="571" alt="image" src="https://github.com/user-attachments/assets/f6b82bea-9aa9-45a7-a883-f595d90f3643" />
+
 ## Itinerary Page 
 <img width="1164" height="561" alt="image" src="https://github.com/user-attachments/assets/ce23faba-330b-4e95-87f7-8ad00acc2ba2" />
+
 ## Attractions Lookup
 <img width="1308" height="528" alt="image" src="https://github.com/user-attachments/assets/0e23316a-0fa7-4c41-93f9-95f1a6e9c783" />
 
